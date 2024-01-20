@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Afgan Rasulov - Fenomenlerin Tavsiye Ettiği Eğitmen",
-    "currentPage": "afgan-rasulov-hakkinda-yapilan-yorumlar.html",
+    "currentPage": "afgan-rasulov-hakkinda-yapilan-yorumla.html",
     "theme": {
       "name": "startm5",
       "title": "StartM5",
@@ -70,7 +70,7 @@
     "sitemapSwitcher": false,
     "sitemapSwitcherAuto": "on",
     "siteUrl": false,
-    "publishChangesOnly": true,
+    "publishChangesOnly": false,
     "robotsText": "User-agent: *\r\nDisallow: /cgi-bin\r\n",
     "cookiesAlert": false,
     "gdpr": false,
@@ -5652,7 +5652,7 @@
         }
       ]
     },
-    "afgan-rasulov-hakkinda-yapilan-yorumlar.html": {
+    "afgan-rasulov-hakkinda-yapilan-yorumla.html": {
       "settings": {
         "title": "Afgan Rasulov Hakkında Yapılan Yorumlar ve Değerlendirmeler",
         "order": "2",

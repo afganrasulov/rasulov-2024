@@ -23,7 +23,44 @@
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="reviews_files/reviews.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+    <style>
+        .wrapper {
+            font-family: open sans, helvetica neue, Helvetica, Arial, sans-serif;
+            line-height: 1.43;
+        }
 
+        .rating-box {
+            position: relative;
+            vertical-align: middle;
+            font-size: 2em;
+            font-family: FontAwesome;
+            display: inline-block;
+            color: #F68127;
+        }
+
+        .rating-box:before {
+            content: "\f006 \f006 \f006 \f006 \f006";
+        }
+
+        .rating-box .rating {
+            position: absolute;
+            left: 0;
+            top: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            color: #F68127;
+        }
+
+        .rating-box .rating:before {
+            content: "\f005 \f005 \f005 \f005 \f005";
+        }
+
+        
+    </style>
   
   
   
@@ -101,7 +138,15 @@ src="https://www.facebook.com/tr?id=341541102163550&ev=PageView&noscript=1"
 				<div class="text-wrapper align-left">
 					<h1 class="mbr-section-title mbr-fonts-style mb-4 display-2"><strong>Afgan Rasulov Hakkında Yapılan Yorumlar ve Değerlendirmeler</strong></h1>
 					<p class="mbr-text align-left mbr-fonts-style mb-4 display-7">
-					Dijital alanda yılların verdiği tecrübe ile birçok YouTube üreticisinin fenomen olma yolculuğunda milyonlarca takipçiye ulaşmasında kritik bir rol oynadım. Öğrencilerin ve genç yeteneklerin dijital dünyada kendilerini ifade etme ve kariyerlerini geliştirme konusunda rehberlik ettim. Yüz binlerce öğrenciye, dijital içerik üretimi, sosyal medya stratejileri ve markalarını nasıl büyütecekleri konusunda yol gösterdim. Dijital dünyanın hızla değişen dinamikleri arasında, bireylere ve markalara, sadece başarıya ulaşmak için değil, aynı zamanda sürdürülebilir ve etik bir şekilde büyümeleri için rehberlik etmekteyim.
+					  <div class="wrapper" id="slide" style="display: none;">
+        <div id="review_owner"></div>
+        <div class="rating-box">
+            <div class="rating" style="width:100%;"></div>
+        </div>
+        <div id="review">
+
+        </div>
+    </div>
 					</p>
 					<div class="mbr-section-btn align-left mt-3"><a class="btn btn-danger-outline display-7" href="afgan-rasulov-kimdir.html#content5-b">Hakkımda daha fazla oku</a> <a class="btn btn-danger display-7" href="afgan-rasulov-kimdir.html#video4-k">Fenomen yorumları</a></div>
 				</div>
@@ -159,4 +204,29 @@ src="https://www.facebook.com/tr?id=341541102163550&ev=PageView&noscript=1"
   
  <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
   </body>
+
+	<script>
+    var index = getRndInteger(0, reviews.length - 1);
+    fadeOutIn();
+    setInterval(
+        function () {
+            index = getRndInteger(0, reviews.length - 1);
+            fadeOutIn();
+        }, readingDelay
+    )
+
+    function fadeOutIn() {
+        $.when($('#slide').fadeOut(fadeInDelay))
+            .done(function () {
+                $("#review_owner").text(reviews[index].review_owner.toUpperCase());
+                $("#review").text(reviews[index].txt);
+                $("#slide").fadeIn(fadeOutDelay);
+            });
+    }
+
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+</script>
 </html>
